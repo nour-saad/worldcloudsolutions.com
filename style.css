@@ -1,9 +1,9 @@
 /* --- Global Variables & Reset --- */
 :root {
-    --bg-color: #050505; /* Deep Black */
-    --surface-color: #111111; /* Slightly lighter black for cards */
-    --text-main: #f0f0f0; /* Off-white for readability */
-    --text-muted: #a0a0a0; /* Gray for secondary text */
+    --bg-color: #ffffff; /* White */
+    --surface-color: #f9f9f9; /* Light gray for cards */
+    --text-main: #222222; /* Dark text for readability */
+    --text-muted: #666666; /* Gray for secondary text */
     --main-blue: #639FBE; /* Main blue from logo */
     --main-blue-hover: #4A86A6; /* Darker blue for hover */
     --accent-red: #D83134; /* Accent red from logo */
@@ -30,7 +30,7 @@ a {
 }
 
 a:hover {
-    color: #ffffff;
+    color: var(--main-blue-hover);
 }
 
 .container {
@@ -41,8 +41,8 @@ a:hover {
 
 /* --- Navigation --- */
 header {
-    background-color: rgba(5, 5, 5, 0.9);
-    border-bottom: 1px solid #222;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid #eee;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -64,13 +64,13 @@ header {
     height: 50px; /* Adjust as needed */
     width: auto;
     object-fit: contain;
-    margin-right: 15px; /* Spacing between logo and text */
+    margin-right: 30px; /* Spacing between logo and text */
 }
 
 .logo-text {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #fff;
+    color: var(--main-blue);
 }
 
 .logo-text span {
@@ -96,13 +96,13 @@ header {
 .hero {
     padding: 100px 0;
     text-align: center;
-    border-bottom: 1px solid #222;
+    border-bottom: 1px solid #eee;
 }
 
 .hero h1 {
     font-size: 2.8rem;
     margin-bottom: 20px;
-    color: #fff;
+    color: var(--text-main);
 }
 
 .hero p {
@@ -130,7 +130,7 @@ header {
 /* --- Services Section --- */
 .services {
     padding: 80px 0;
-    border-bottom: 1px solid #222;
+    border-bottom: 1px solid #eee;
 }
 
 .services h2 {
@@ -149,7 +149,7 @@ header {
     background-color: var(--surface-color);
     padding: 40px 30px;
     border-radius: 8px;
-    border: 1px solid #222;
+    border: 1px solid #eee;
     transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
@@ -194,7 +194,7 @@ header {
     display: inline-block;
     padding: 30px 50px;
     border-radius: 8px;
-    border: 1px solid #222;
+    border: 1px solid #eee;
     text-align: left;
 }
 
@@ -209,10 +209,10 @@ header {
 
 /* --- Footer --- */
 footer {
-    background-color: #000;
+    background-color: var(--surface-color);
     padding: 30px 0;
     text-align: center;
-    border-top: 1px solid #222;
+    border-top: 1px solid #eee;
 }
 
 footer p {
