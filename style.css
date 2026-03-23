@@ -64,6 +64,17 @@ header {
     height: 50px; /* Adjust as needed */
     width: auto;
     object-fit: contain;
+    margin-right: 15px; /* Spacing between logo and text */
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.logo-text span {
+    color: var(--accent-red);
 }
 
 .nav-links {
@@ -103,7 +114,7 @@ header {
 
 .btn {
     display: inline-block;
-    background-color: var(--main-blue);
+    background-color: var(--accent-red);
     color: #fff;
     padding: 12px 30px;
     border-radius: 4px;
@@ -112,7 +123,7 @@ header {
 }
 
 .btn:hover {
-    background-color: var(--main-blue-hover);
+    background-color: var(--accent-red-hover);
     color: #fff;
 }
 
