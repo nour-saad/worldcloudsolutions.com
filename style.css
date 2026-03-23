@@ -219,3 +219,38 @@ footer p {
     color: var(--text-muted);
     font-size: 0.9rem;
 }
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        height: auto;
+        padding: 15px 0;
+        gap: 15px;
+    }
+    
+    .logo {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .logo-img {
+        margin-right: 0;
+        margin-bottom: 10px;
+        height: 55px; /* slightly smaller or adjusted if needed */
+    }
+    
+    .logo-text {
+        font-size: 1.3rem;
+        white-space: normal; /* ensures the text can wrap if still tight */
+        text-align: center;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .services h2, .contact h2 {
+        font-size: 1.6rem;
+    }
+}
