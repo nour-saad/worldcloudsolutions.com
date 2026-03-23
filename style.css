@@ -1,14 +1,13 @@
 /* --- Global Variables & Reset --- */
 :root {
-    --bg-color-main: #eff1f3; 
-    --text-body: #555555; 
-    --heading-main-blue: #84b3d8; 
-    --accent-red: #cf2e2e; /* Primary Red Accent */
-    --link-blue: #4a78a8; 
-    --btn-bg-blue: #84b3d8;
-    --btn-text: #ffffff;
-    --card-bg: #ffffff;
-    --border-color: #d1d5db; 
+    --bg-color: #050505; /* Deep Black */
+    --surface-color: #111111; /* Slightly lighter black for cards */
+    --text-main: #f0f0f0; /* Off-white for readability */
+    --text-muted: #a0a0a0; /* Gray for secondary text */
+    --main-blue: #639FBE; /* Main blue from logo */
+    --main-blue-hover: #4A86A6; /* Darker blue for hover */
+    --accent-red: #D83134; /* Accent red from logo */
+    --accent-red-hover: #B82528; /* Darker red for hover */
 }
 
 * {
@@ -19,22 +18,19 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background-color: var(--bg-color-main);
-    background-image: linear-gradient(135deg, rgba(239,241,243,0.9) 0%, rgba(239,241,243,1) 100%),
-                      url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d1d5db' fill-opacity='0.1' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zm1 0v1L1 6H0zM6 1v1L2 6H1zM6 2v1L3 6H2zM6 3v1L4 6H3zM6 4v1L5 6H4z'/%3E%3C/g%3E%3C/svg%3E");
-    color: var(--text-body);
+    background-color: var(--bg-color);
+    color: var(--text-main);
     line-height: 1.6;
 }
 
 a {
-    color: var(--link-blue);
+    color: var(--main-blue);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-/* Red accent on general links */
 a:hover {
-    color: var(--accent-red);
+    color: #ffffff;
 }
 
 .container {
@@ -45,8 +41,8 @@ a:hover {
 
 /* --- Navigation --- */
 header {
-    background-color: var(--bg-color-main);
-    border-bottom: 1px solid var(--border-color);
+    background-color: rgba(5, 5, 5, 0.9);
+    border-bottom: 1px solid #222;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -56,21 +52,18 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100px; 
+    height: 70px;
 }
 
-/* Fixed Logo Block to prevent squishing */
-.logo-block {
-    height: 90px;
-    width: 100%;
-    max-width: 400px; 
+.logo {
     display: flex;
     align-items: center;
 }
 
-.logo-svg {
-    width: 100%;
-    height: auto;
+.logo-img {
+    height: 50px; /* Adjust as needed */
+    width: auto;
+    object-fit: contain;
 }
 
 .nav-links {
@@ -80,12 +73,10 @@ header {
 }
 
 .nav-links a {
-    color: var(--text-body);
-    font-weight: 600;
-    transition: color 0.2s ease;
+    color: var(--text-main);
+    font-weight: 500;
 }
 
-/* Red accent on Navigation Links */
 .nav-links a:hover {
     color: var(--accent-red);
 }
@@ -94,51 +85,47 @@ header {
 .hero {
     padding: 100px 0;
     text-align: center;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid #222;
 }
 
 .hero h1 {
     font-size: 2.8rem;
     margin-bottom: 20px;
-    color: var(--heading-main-blue);
+    color: #fff;
 }
 
 .hero p {
     font-size: 1.2rem;
-    color: var(--text-body);
-    max-width: 700px;
+    color: var(--text-muted);
+    max-width: 600px;
     margin: 0 auto 40px auto;
 }
 
 .btn {
     display: inline-block;
-    background-color: var(--btn-bg-blue);
-    color: var(--btn-text);
+    background-color: var(--main-blue);
+    color: #fff;
     padding: 12px 30px;
     border-radius: 4px;
     font-weight: 600;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
-/* Red accent on Button Hover */
 .btn:hover {
-    background-color: var(--accent-red); 
+    background-color: var(--main-blue-hover);
     color: #fff;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(207, 46, 46, 0.3);
 }
 
 /* --- Services Section --- */
 .services {
     padding: 80px 0;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid #222;
 }
 
 .services h2 {
     text-align: center;
     font-size: 2rem;
     margin-bottom: 50px;
-    color: var(--heading-main-blue);
 }
 
 .service-grid {
@@ -148,34 +135,30 @@ header {
 }
 
 .service-card {
-    background-color: var(--card-bg);
+    background-color: var(--surface-color);
     padding: 40px 30px;
     border-radius: 8px;
-    border: 1px solid var(--border-color);
-    border-top: 4px solid transparent; /* Placeholder for hover effect */
-    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-    text-align: center; 
+    border: 1px solid #222;
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
-/* Red accent on Card Hover */
 .service-card:hover {
     transform: translateY(-5px);
-    border-top: 4px solid var(--accent-red);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    border-color: var(--accent-red);
 }
 
-.service-card .icon-svg {
+.service-card .icon {
+    font-size: 2.5rem;
     margin-bottom: 20px;
 }
 
 .service-card h3 {
     margin-bottom: 15px;
     font-size: 1.4rem;
-    color: var(--heading-main-blue);
 }
 
 .service-card p {
-    color: var(--text-body);
+    color: var(--text-muted);
     font-size: 0.95rem;
 }
 
@@ -188,26 +171,25 @@ header {
 .contact h2 {
     font-size: 2rem;
     margin-bottom: 20px;
-    color: var(--heading-main-blue);
 }
 
 .contact p {
-    color: var(--text-body);
+    color: var(--text-muted);
     margin-bottom: 30px;
 }
 
 .contact-info {
-    background-color: var(--card-bg);
+    background-color: var(--surface-color);
     display: inline-block;
     padding: 30px 50px;
     border-radius: 8px;
-    border: 1px solid var(--border-color);
+    border: 1px solid #222;
     text-align: left;
 }
 
 .contact-info p {
     margin-bottom: 10px;
-    color: var(--text-body);
+    color: var(--text-main);
 }
 
 .contact-info p:last-child {
@@ -216,13 +198,13 @@ header {
 
 /* --- Footer --- */
 footer {
-    background-color: var(--bg-color-main);
+    background-color: #000;
     padding: 30px 0;
     text-align: center;
-    border-top: 1px solid var(--border-color);
+    border-top: 1px solid #222;
 }
 
 footer p {
-    color: var(--text-body);
+    color: var(--text-muted);
     font-size: 0.9rem;
 }
