@@ -1,11 +1,14 @@
-/* --- Global Variables & Reset --- */
+/* --- Global Variables & Reset (New Palette from Image) --- */
 :root {
-    --bg-color: #050505; /* Deep Black */
-    --surface-color: #111111; /* Slightly lighter black for cards */
-    --text-main: #f0f0f0; /* Off-white for readability */
-    --text-muted: #a0a0a0; /* Gray for secondary text */
-    --accent-blue: #1d4ed8; /* Deep True Blue (Tailwind Blue-700) */
-    --accent-blue-hover: #2563eb; /* Slightly lighter true blue for hover */
+    --bg-color-main: #eff1f3; /* Light, cold textured gray */
+    --text-body: #555555; /* Dark gray for paragraphs and tagline */
+    --heading-main-blue: #84b3d8; /* The specific light blue from the logo name */
+    --accent-red: #cf2e2e; /* Red dot/separator accent */
+    --link-blue: #4a78a8; /* Darker blue for readable link text */
+    --btn-bg-blue: #84b3d8;
+    --btn-text: #ffffff;
+    --card-bg: #ffffff;
+    --border-color: #d1d5db; /* Light border color */
 }
 
 * {
@@ -16,19 +19,22 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-main);
+    /* Apply textured paper background feel */
+    background-color: var(--bg-color-main);
+    background-image: linear-gradient(135deg, rgba(239,241,243,0.9) 0%, rgba(239,241,243,1) 100%),
+                      url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d1d5db' fill-opacity='0.1' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zm1 0v1L1 6H0zM6 1v1L2 6H1zM6 2v1L3 6H2zM6 3v1L4 6H3zM6 4v1L5 6H4z'/%3E%3C/g%3E%3C/svg%3E");
+    color: var(--text-body);
     line-height: 1.6;
 }
 
 a {
-    color: var(--accent-blue-hover);
+    color: var(--link-blue);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 a:hover {
-    color: #ffffff;
+    color: var(--accent-red);
 }
 
 .container {
@@ -39,8 +45,8 @@ a:hover {
 
 /* --- Navigation --- */
 header {
-    background-color: rgba(5, 5, 5, 0.9);
-    border-bottom: 1px solid #222;
+    background-color: var(--bg-color-main);
+    border-bottom: 1px solid var(--border-color);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -50,17 +56,16 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 70px;
+    height: 100px; /* Adjust height to fit logo */
 }
 
-.logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #fff;
+.logo-block {
+    height: 90px;
 }
 
-.logo span {
-    color: var(--accent-blue);
+.logo-svg {
+    max-width: 220px;
+    height: 100%;
 }
 
 .nav-links {
@@ -70,38 +75,38 @@ header {
 }
 
 .nav-links a {
-    color: var(--text-main);
+    color: var(--text-body);
     font-weight: 500;
 }
 
 .nav-links a:hover {
-    color: var(--accent-blue);
+    color: var(--heading-main-blue);
 }
 
 /* --- Hero Section --- */
 .hero {
     padding: 100px 0;
     text-align: center;
-    border-bottom: 1px solid #222;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .hero h1 {
     font-size: 2.8rem;
     margin-bottom: 20px;
-    color: #fff;
+    color: var(--heading-main-blue);
 }
 
 .hero p {
     font-size: 1.2rem;
-    color: var(--text-muted);
-    max-width: 600px;
+    color: var(--text-body);
+    max-width: 700px;
     margin: 0 auto 40px auto;
 }
 
 .btn {
     display: inline-block;
-    background-color: var(--accent-blue);
-    color: #fff;
+    background-color: var(--btn-bg-blue);
+    color: var(--btn-text);
     padding: 12px 30px;
     border-radius: 4px;
     font-weight: 600;
@@ -109,20 +114,21 @@ header {
 }
 
 .btn:hover {
-    background-color: var(--accent-blue-hover);
+    background-color: var(--link-blue); /* Subtle dark blue hover */
     color: #fff;
 }
 
 /* --- Services Section --- */
 .services {
     padding: 80px 0;
-    border-bottom: 1px solid #222;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .services h2 {
     text-align: center;
     font-size: 2rem;
     margin-bottom: 50px;
+    color: var(--heading-main-blue);
 }
 
 .service-grid {
@@ -132,30 +138,31 @@ header {
 }
 
 .service-card {
-    background-color: var(--surface-color);
+    background-color: var(--card-bg);
     padding: 40px 30px;
     border-radius: 8px;
-    border: 1px solid #222;
+    border: 1px solid var(--border-color);
     transition: transform 0.3s ease, border-color 0.3s ease;
+    text-align: center; /* Center icons */
 }
 
 .service-card:hover {
     transform: translateY(-5px);
-    border-color: var(--accent-blue);
+    border-color: var(--heading-main-blue);
 }
 
-.service-card .icon {
-    font-size: 2.5rem;
+.service-card .icon-svg {
     margin-bottom: 20px;
 }
 
 .service-card h3 {
     margin-bottom: 15px;
     font-size: 1.4rem;
+    color: var(--heading-main-blue);
 }
 
 .service-card p {
-    color: var(--text-muted);
+    color: var(--text-body);
     font-size: 0.95rem;
 }
 
@@ -168,25 +175,26 @@ header {
 .contact h2 {
     font-size: 2rem;
     margin-bottom: 20px;
+    color: var(--heading-main-blue);
 }
 
 .contact p {
-    color: var(--text-muted);
+    color: var(--text-body);
     margin-bottom: 30px;
 }
 
 .contact-info {
-    background-color: var(--surface-color);
+    background-color: var(--card-bg);
     display: inline-block;
     padding: 30px 50px;
     border-radius: 8px;
-    border: 1px solid #222;
+    border: 1px solid var(--border-color);
     text-align: left;
 }
 
 .contact-info p {
     margin-bottom: 10px;
-    color: var(--text-main);
+    color: var(--text-body);
 }
 
 .contact-info p:last-child {
@@ -195,13 +203,13 @@ header {
 
 /* --- Footer --- */
 footer {
-    background-color: #000;
+    background-color: var(--bg-color-main);
     padding: 30px 0;
     text-align: center;
-    border-top: 1px solid #222;
+    border-top: 1px solid var(--border-color);
 }
 
 footer p {
-    color: var(--text-muted);
+    color: var(--text-body);
     font-size: 0.9rem;
 }
