@@ -1,14 +1,14 @@
-/* --- Global Variables & Reset (New Palette from Image) --- */
+/* --- Global Variables & Reset --- */
 :root {
-    --bg-color-main: #eff1f3; /* Light, cold textured gray */
-    --text-body: #555555; /* Dark gray for paragraphs and tagline */
-    --heading-main-blue: #84b3d8; /* The specific light blue from the logo name */
-    --accent-red: #cf2e2e; /* Red dot/separator accent */
-    --link-blue: #4a78a8; /* Darker blue for readable link text */
+    --bg-color-main: #eff1f3; 
+    --text-body: #555555; 
+    --heading-main-blue: #84b3d8; 
+    --accent-red: #cf2e2e; /* Primary Red Accent */
+    --link-blue: #4a78a8; 
     --btn-bg-blue: #84b3d8;
     --btn-text: #ffffff;
     --card-bg: #ffffff;
-    --border-color: #d1d5db; /* Light border color */
+    --border-color: #d1d5db; 
 }
 
 * {
@@ -19,7 +19,6 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    /* Apply textured paper background feel */
     background-color: var(--bg-color-main);
     background-image: linear-gradient(135deg, rgba(239,241,243,0.9) 0%, rgba(239,241,243,1) 100%),
                       url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d1d5db' fill-opacity='0.1' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zm1 0v1L1 6H0zM6 1v1L2 6H1zM6 2v1L3 6H2zM6 3v1L4 6H3zM6 4v1L5 6H4z'/%3E%3C/g%3E%3C/svg%3E");
@@ -33,6 +32,7 @@ a {
     transition: color 0.3s ease;
 }
 
+/* Red accent on general links */
 a:hover {
     color: var(--accent-red);
 }
@@ -56,16 +56,21 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100px; /* Adjust height to fit logo */
+    height: 100px; 
 }
 
+/* Fixed Logo Block to prevent squishing */
 .logo-block {
     height: 90px;
+    width: 100%;
+    max-width: 400px; 
+    display: flex;
+    align-items: center;
 }
 
 .logo-svg {
-    max-width: 220px;
-    height: 100%;
+    width: 100%;
+    height: auto;
 }
 
 .nav-links {
@@ -76,11 +81,13 @@ header {
 
 .nav-links a {
     color: var(--text-body);
-    font-weight: 500;
+    font-weight: 600;
+    transition: color 0.2s ease;
 }
 
+/* Red accent on Navigation Links */
 .nav-links a:hover {
-    color: var(--heading-main-blue);
+    color: var(--accent-red);
 }
 
 /* --- Hero Section --- */
@@ -110,12 +117,15 @@ header {
     padding: 12px 30px;
     border-radius: 4px;
     font-weight: 600;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
+/* Red accent on Button Hover */
 .btn:hover {
-    background-color: var(--link-blue); /* Subtle dark blue hover */
+    background-color: var(--accent-red); 
     color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(207, 46, 46, 0.3);
 }
 
 /* --- Services Section --- */
@@ -142,13 +152,16 @@ header {
     padding: 40px 30px;
     border-radius: 8px;
     border: 1px solid var(--border-color);
-    transition: transform 0.3s ease, border-color 0.3s ease;
-    text-align: center; /* Center icons */
+    border-top: 4px solid transparent; /* Placeholder for hover effect */
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    text-align: center; 
 }
 
+/* Red accent on Card Hover */
 .service-card:hover {
     transform: translateY(-5px);
-    border-color: var(--heading-main-blue);
+    border-top: 4px solid var(--accent-red);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
 }
 
 .service-card .icon-svg {
